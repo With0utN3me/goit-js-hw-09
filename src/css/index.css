@@ -73,10 +73,15 @@ input{
     font-weight: 400;
     line-height: 24px; /* 150% */
     letter-spacing: 0.64px;
+    padding-left: 16px;
 }
 textarea{
     height: 80px;
     padding: 0;
+    padding: 10px 0 0 16px;
+    border-radius: 4px;
+    resize: none;
+    
 }
 button[type="submit"]{
     padding: 0;
@@ -101,4 +106,16 @@ button:hover {
 }
 input:hover {
     border: 1px solid #000000; 
+}
+input::-webkit-input-placeholder{
+    color: transparent;
+}
+input:focus {
+outline: initial;
+}
+input:focus::-webkit-input-placeholder{
+    color: #2E2F42;
+}
+textarea:focus {
+    outline: initial;
 }
