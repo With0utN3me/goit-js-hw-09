@@ -1,6 +1,6 @@
 const form = document.querySelector("form")
 const localStoragekey = "feedback-form-state";
-const formData = {};
+let formData = {};
 window.addEventListener("load", () => { 
     if (localStorage.getItem(localStoragekey) !== null ){
         const parsedData = JSON.parse(localStorage.getItem(localStoragekey));
