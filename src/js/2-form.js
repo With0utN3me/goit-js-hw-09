@@ -11,16 +11,22 @@ window.addEventListener("load", () => {
 
 form.addEventListener("input", () => {
     formData = {
-        email: form.elements.email.value,
-        message: form.elements.message.value,
+        email: form.elements.email.value.trim(),
+        message: form.elements.message.value.trim(),
     }
     localStorage.setItem(localStoragekey, JSON.stringify(formData));
 });
 
 form.addEventListener("submit", (evt) => {
-    let parsedData = JSON.parse(localStorage.getItem(localStoragekey));
-    evt.preventDefault();
-    console.log(parsedData);
-    localStorage.removeItem(localStoragekey);
-    form.reset();
+    if(form.elements.email.value !== "" && form.elements.message.value !== ""){
+        let parsedData = JSON.parse(localStorage.getItem(localStoragekey));
+        evt.preventDefault();
+        console.log(parsedData);
+        localStorage.removeItem(localStoragekey);
+        form.reset();
+    }
+    else{
+        evt.preventDefault();
+        alert("Please, fill all the inputs");
+    }
 });

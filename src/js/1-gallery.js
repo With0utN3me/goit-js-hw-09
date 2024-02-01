@@ -72,14 +72,13 @@ const container = document.querySelector(".gallery");
 for (const{ preview, original, description } of images) {
     container.insertAdjacentHTML("beforeend",
     `<li class="gallery-item">
-        <a class="gallery-link" href="${original}" onclick="event.preventDefault()">
+        <a class="gallery-link" href="${original}">
         <img class="gallery-image" src="${preview}" alt="${description}" />
         </a>
     </li>`)
 };
 let gallery = new SimpleLightbox(`.gallery a`,
     {
-        captions: true,
         captionsData: `alt`,
         captionDelay: 250,
     }); 
