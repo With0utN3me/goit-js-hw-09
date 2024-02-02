@@ -18,7 +18,7 @@ form.addEventListener("input", () => {
 });
 
 form.addEventListener("submit", (evt) => {
-    if(form.elements.email.value !== "" && form.elements.message.value !== ""){
+    if(form.elements.email.value.trim() !== "" && form.elements.message.value.trim() !== ""){
         let parsedData = JSON.parse(localStorage.getItem(localStoragekey));
         evt.preventDefault();
         console.log(parsedData);
